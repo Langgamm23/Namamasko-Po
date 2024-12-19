@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Zach</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            color: #880e4f;
+            margin: 0;
+            overflow: hidden; /*para di ma scroll*/
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        button#yes {
+            background-color: #f06292;
+            color: white;
+        }
+        button#yes:hover {
+            background-color: #e91e63;
+        }
+        button#no {
+            background-color: #ce93d8;
+            color: white;
+        }
+        button#no:hover {
+            background-color: #ab47bc;
+        }
+        #message {
+            font-size: 2rem;
+            margin-top: 20px;
+            display: none;
+        }
+        #button-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>I Love You, Zach!</h1>
+    <h2>Do you love me Zach? - Junlii</h2>
+    <div id="button-container">
+        <button id="yes" style="left: 40%; top: 60%;">Yes</button>
+        <button id="no" style="left: 60%; top: 60%;">No</button>
+    </div>
+    <div id="message">I love you too! ❤️</div>
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const message = document.getElementById('message');
+        const buttonContainer = document.getElementById('button-container');
+
+        // Makikita yung msg bisakol
+        yesButton.addEventListener('click', () => {
+            message.style.display = 'block';
+        });
+
+        // iskibidi tp muna sa no
+        noButton.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
